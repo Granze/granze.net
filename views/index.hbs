@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <title>Maurizio Mangione A.K.A. Granze</title>
+      <meta charset="utf-8">
+      <meta name="description" content="Personal website of Maurizio Mangione A.K.A. Granze">
+      <meta name="keywords" content="Maurizio Mangione, Granze, climbing, front end, developer, javascript, jquery, UI, user interface, html5, css3">
+      <meta name="author" content="Maurizio Mangione">
+      <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans|Bree+Serif" rel="stylesheet">
+      <link rel="stylesheet" href="/components/sass-bootstrap/bootstrap-2.3.1.min.css">
+      <link rel="stylesheet" href="/components/sass-bootstrap/bootstrap-responsive-2.3.1.min.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="shortcut icon" href="/favicon.ico">
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+  </head>
+  </head>
+  <body class="container">
+    <header class="row">
+      <h1>Granze</h1>
+    </header>
+      <section class="row" id="main">
+        <ul id="lastfm" class="unstyled">
+          {{#lastfm}}
+          <li><a href="{{link}}">{{title}}</a></li>
+          {{/lastfm}}
+        </ul>
+      </section>
+    <footer class="row">footer</footer>
+  </body>
+</html>
