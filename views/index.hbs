@@ -23,9 +23,16 @@
       <h1>Granze</h1>
     </header>
       <section class="row" id="main">
+        <h2>8a.nu</h2>
+        <ul id="ottoa" class="unstyled">
+          {{#ottoa}}
+          <li><a href="{{url}}">{{title}}</a></li>
+          {{/ottoa}}
+        </ul>
+        <h2>last.fm</h2>
         <ul id="lastfm" class="unstyled">
           {{#lastfm}}
-          <li><a href="{{link}}">{{title}}</a></li>
+          <li><a href="{{url}}">{{title}}</a></li>
           {{/lastfm}}
         </ul>
       </section>

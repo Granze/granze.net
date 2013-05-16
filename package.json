@@ -9,6 +9,10 @@
     "express": "3.1.0",
     "hbs": "*",
     "sass": "*",
-    "feed-read": "*"
+    "rssparser": "0.0.3",
+    "async": "~0.2.8"
+  },
+  "devDependencies": {
+    "nodemon": "~0.7.8"
   }
 }
