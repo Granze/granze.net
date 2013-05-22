@@ -14,7 +14,6 @@ exports.index = function(req, res){
               grade = route[0].slice(-3).trim(),
               name = route[0].slice(0, -3).trim(),
               crag = route[1];
-              console.log(route);
 
               ascentData.push({route: name, grade: grade, crag: crag});
         }
@@ -23,6 +22,11 @@ exports.index = function(req, res){
     },
     lastfm: function(callback){
       parser.parseURL('http://ws.audioscrobbler.com/1.0/user/granzebru/recenttracks.rss', options, function(err, out){
+        callback(null, out.items);
+      });
+    },
+    github: function(callback){
+      parser.parseURL('https://github.com/Granze.atom', options, function(err, out){
         callback(null, out.items);
       });
     }

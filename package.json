@@ -13,6 +13,7 @@
     "async": "~0.2.8"
   },
   "devDependencies": {
-    "nodemon": "~0.7.8"
+    "nodemon": "~0.7.8",
+    "grunt": "~0.4.1"
   }
 }

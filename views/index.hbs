@@ -23,18 +23,30 @@
       <h1>Granze</h1>
     </header>
       <section class="row" id="main">
-        <h2>8a.nu</h2>
-        <ul id="ottoa" class="unstyled">
-          {{#ottoa}}
-          <li>{{route}} <strong>{{grade}}</strong> - <em>{{crag}}</em></li>
-          {{/ottoa}}
-        </ul>
-        <h2>last.fm</h2>
-        <ul id="lastfm" class="unstyled">
-          {{#lastfm}}
-          <li><a href="{{url}}">{{title}}</a></li>
-          {{/lastfm}}
-        </ul>
+        <div class="span6">
+          <a class="twitter-timeline" href="https://twitter.com/granze" data-widget-id="297403221943648256">Tweets by @granze</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <div class="span6">
+          <h2>8a.nu</h2>
+          <ul id="ottoa" class="unstyled">
+            {{#ottoa}}
+            <li>{{route}} <strong>{{grade}}</strong> - <em>{{crag}}</em></li>
+            {{/ottoa}}
+          </ul>
+          <h2>Last.fm</h2>
+          <ul id="lastfm" class="unstyled">
+            {{#lastfm}}
+            <li><a href="{{url}}">{{title}}</a></li>
+            {{/lastfm}}
+          </ul>
+          <h2>Github</h2>
+          <ul id="github" class="unstyled">
+            {{#github}}
+            <li>{{title}} - <em>{{time_ago}}</em></li>
+            {{/github}}
+          </ul>
+        </div>
       </section>
     <footer class="row">footer</footer>
   </body>

@@ -2,9 +2,8 @@ var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
     hbs = require('hbs'),
-    path = require('path');
-
-var app = express();
+    path = require('path'),
+    app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
