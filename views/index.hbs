@@ -9,8 +9,6 @@
       <meta name="author" content="Maurizio Mangione">
       <meta name="viewport" content="width=device-width, maximum-scale=1.0">
       <link href="http://fonts.googleapis.com/css?family=Open+Sans|Bree+Serif" rel="stylesheet">
-      <link rel="stylesheet" href="/components/sass-bootstrap/bootstrap-2.3.1.min.css">
-      <link rel="stylesheet" href="/components/sass-bootstrap/bootstrap-responsive-2.3.1.min.css">
       <link rel="stylesheet" href="/css/main.css">
       <link rel="shortcut icon" href="/favicon.ico">
       <!--[if lt IE 9]>
@@ -18,12 +16,12 @@
       <![endif]-->
   </head>
   </head>
-  <body class="container">
-    <header class="row">
+  <body>
+    <header>
       <h1>Granze</h1>
     </header>
-      <section class="row" id="main">
-        <div class="span6">
+      <section id="main">
+        <div>
           <h2>About me</h2>
           <h3>&lt;head&gt;</h3>
           <p>I've always been fascinated by computers, my very first love was a Commodore 64. I wasn't really a Basic programming badass but, who cares, I had a lot of fun with it.</p>
@@ -36,27 +34,27 @@
           <p>The bad thing is that I started at the age of 32 (sigh!), the good thing is that climbing changed my life. This can maybe sound as an exaggeration, but is real! Climbing changed my habits, my friendships and the way I spend my time during the week.</p>
           <p>Climbing is really important for me and I'm putting a lot of effort in it, trying to push the limits to see what can I achieve.<br />For now, my best performances are 8a on sport routes and 7b+ on boulders. Not really big numbers but well, is not so bad at all and I know I will do more.</p>
         </div>
-        <div class="span6">
+        <div>
           <h2>8a.nu</h2>
-          <ul id="ottoa" class="unstyled">
+          <ul id="ottoa">
             {{#ottoa}}
             <li>{{route}} <strong>{{grade}}</strong> - <em>{{crag}}</em></li>
             {{/ottoa}}
           </ul>
           <h2>Last.fm</h2>
-          <ul id="lastfm" class="unstyled">
+          <ul id="lastfm">
             {{#lastfm}}
             <li><a href="{{url}}">{{title}}</a></li>
             {{/lastfm}}
           </ul>
           <h2>Github</h2>
-          <ul id="github" class="unstyled">
+          <ul id="github">
             {{#github}}
             <li>{{title}} - <em>{{time_ago}}</em></li>
             {{/github}}
           </ul>
         </div>
       </section>
-    <footer class="row">footer</footer>
+    <footer>footer</footer>
   </body>
 </html>
