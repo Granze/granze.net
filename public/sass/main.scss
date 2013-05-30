@@ -1,3 +1,22 @@
+@import "pure-granze";
+
+//vars
+$mainBg: #707070;
+$mainColor: #fcfcfc;
+$altColor: #70bc52;
+
 body {
-  background-color: #eee;
+  margin: auto;
+  max-width: 960px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $mainColor;
+  background-color: $mainBg;
+}
+h2, h3, h4, h5 {
+  font-family: 'Bevan', cursive;
+  font-weight: normal;
+  color: $altColor;
+}
+.inner-box {
+  padding: 1em;
 }
