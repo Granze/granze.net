@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         files: '**/*.scss',
         tasks: ['compass'],
         options: {
-          livereload: 3000
+          livereload: true
         }
       }
     },
@@ -38,5 +38,4 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.registerTask('default', ['concurrent:target']);
-
 };
