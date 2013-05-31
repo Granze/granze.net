@@ -2,8 +2,9 @@
   "name": "granzev2",
   "version": "0.0.1",
   "private": true,
+  "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "nodemon app"
   },
   "dependencies": {
     "express": "3.1.0",
@@ -14,6 +15,11 @@
   },
   "devDependencies": {
     "nodemon": "~0.7.8",
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-nodemon": "0.0.4",
+    "grunt-concurrent": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.4"
   }
 }
