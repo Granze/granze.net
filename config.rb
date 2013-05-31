@@ -6,3 +6,5 @@ javascripts_dir = 'routes'
 output_style = :compressed
 relative_assets= true
 line_comments = false
+
+require 'compass-normalize'
