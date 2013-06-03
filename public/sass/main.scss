@@ -4,9 +4,9 @@
         "pure-granze";
 
 //vars
-$mainBg: #707070;
-$mainColor: #e3e3e3;
-$linkColor: #fff;
+$mainBg: #565656;
+$mainColor: #c0c0c0;
+$linkColor: #ebebeb;
 $altColor: #70bc52;
 
 body {
@@ -14,13 +14,23 @@ body {
   max-width: 960px;
   font-family: Arial, Helvetica, sans-serif;
   color: $mainColor;
-  border-top: 5px solid $altColor;
   background-color: $mainBg;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  font: {
+    family: Georgia, Palatino, serif;
+    size: 4em;
+  }
+  color: rgba(#fff, .7);
+  @include text-shadow(-1px -1px 1px rgba($mainBg, .4));
 }
 h2, h3, h4, h5 {
   font-family: 'Bevan', cursive;
   font-weight: normal;
-  color: $altColor;
+  color: lighten($mainBg, 15);
+  @include text-shadow(-1px -1px 1px darken($mainBg, 10));
 }
 h2 {
   font-size: 2em;
@@ -32,12 +42,25 @@ a {
     color: $altColor;
   }
 }
+header {
+  border-bottom: 2px solid darken($altColor, 5);
+  background-color: $altColor;
+}
 .inner-box {
   padding: 1em;
 }
+#main {
+  border-top: 2px solid darken($mainBg, 10);
+}
 .intro {
-  font-size: 1.2em;
-  color: darken($mainColor, 20%);
+  margin: 0 1px;
+  font-size: 1.5em;
+  font-style: italic;
+  font-family: Georgia, Palatino, serif;
+  color: lighten($mainColor, 10);
+  border-bottom: 1px solid darken($mainBg, 6);
+  background-color: darken($mainBg, 3);
+  @include text-shadow(1px 1px 1px darken($mainBg, 15));
 }
 .feed {
   padding: 0;
