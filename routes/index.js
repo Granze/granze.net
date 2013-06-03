@@ -29,7 +29,13 @@ exports.index = function(req, res){
     },
     github: function(callback){
       parser.parseURL('https://github.com/Granze.atom', options, function(err, out){
-        callback(null, out.items.slice(0,10));
+        if(err) {
+          console.log('if ' + err);
+          callback(null, err);
+        } else {
+          console.log('else ' + err);
+          callback(null, out.items.slice(0,10));
+        }
       });
     }
   },
