@@ -11,7 +11,8 @@
     "hbs": "*",
     "sass": "*",
     "rssparser": "0.0.3",
-    "async": "~0.2.8"
+    "async": "~0.2.8",
+    "simple-twitter": "~1.0.3"
   },
   "devDependencies": {
     "nodemon": "~0.7.8",

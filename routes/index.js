@@ -1,5 +1,13 @@
 exports.index = function(req, res){
 
+  var twitter = require('simple-twitter');
+  twitter = new twitter(consumerKey, //consumer key from twitter api
+                        consumerSecret, //consumer secret key from twitter api
+                        accessToken, //acces token from twitter api
+                        accessSecret, //acces token secret from twitter api
+                        3600  //(optional) time in seconds in which file should be cached (only for get requests), put false for no caching
+                        );
+
   var parser = require('rssparser'),
       async = require('async'),
       options = {headers:{'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1468.0 Safari/537.36'}};
@@ -30,12 +38,22 @@ exports.index = function(req, res){
     github: function(callback){
       parser.parseURL('https://github.com/Granze.atom', options, function(err, out){
         if(err) {
-          console.log('if ' + err);
           callback(null, err);
         } else {
-          console.log('else ' + err);
           callback(null, out.items.slice(0,10));
         }
+      });
+    },
+    twitter: function(callback){
+      twitter.get('statuses/user_timeline', function(error, out) {
+        var tweets = JSON.parse(out).slice(0,10),
+            tweetsData = [];
+        for (var i = 0; i < tweets.length; i++) {
+          var text = tweets[i].text;
+
+          tweetsData.push({text: text});
+        }
+        callback(null, tweetsData);
       });
     }
   },
