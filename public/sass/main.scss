@@ -66,6 +66,13 @@ header {
   padding: 0;
   list-style: none;
 }
+#twitter {
+  li {
+    margin: 4px 0;
+    padding: 4px;
+    background-color: rgba(#333, .1);
+  }
+}
 .code {
   font-family: Courier, cursive;
 }

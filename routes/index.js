@@ -1,16 +1,12 @@
 exports.index = function(req, res){
 
-  var twitter = require('simple-twitter');
-  twitter = new twitter(consumerKey, //consumer key from twitter api
-                        consumerSecret, //consumer secret key from twitter api
-                        accessToken, //acces token from twitter api
-                        accessSecret, //acces token secret from twitter api
-                        3600  //(optional) time in seconds in which file should be cached (only for get requests), put false for no caching
-                        );
-
-  var parser = require('rssparser'),
+  var twitter = require('simple-twitter'),
+      config = require('../config.js'),
+      parser = require('rssparser'),
       async = require('async'),
       options = {headers:{'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1468.0 Safari/537.36'}};
+
+  twitter = new twitter(config.consumerKey, config.consumerSecret, config.accessToken, config.accessSecret, 3600);
 
   async.parallel({
     ottoa: function(callback){
