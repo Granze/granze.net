@@ -27,11 +27,16 @@
           <h2>Twitter</h2>
           <ul class="feed" id="twitter">
             {{#twitter}}
-            <li>{{text}}</li>
+              <li><time class="date">{{date}}</time> - {{text}} | <a href="https://twitter.com/granze/status/{{id}}">details</a></li>
+            {{/twitter}}
+            {{^twitter}}
+              <li class="error">an error occured fetching twitter data</li>
             {{/twitter}}
           </ul>
-          <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @granze</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <div class="btn-twitter">
+            <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @granze</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
           <h2>About me</h2>
           <h3 class="code">&lt;head&gt;</h3>
           <p>I've always been fascinated by computers, my very first love was a Commodore 64. I wasn't really a Basic programming badass but, who cares, I had a lot of fun with it.</p>
@@ -50,26 +55,35 @@
           <h2>8a.nu</h2>
           <ul class="feed" id="ottoa">
             {{#ottoa}}
-            <li>{{route}} <strong>{{grade}}</strong> - <em>{{crag}}</em></li>
+              <li>{{route}} <strong>{{grade}}</strong> - <em class="crag">{{crag}}</em></li>
+            {{/ottoa}}
+            {{^ottoa}}
+              <li class="error">an error occured fetching 8a.nu data</li>
             {{/ottoa}}
           </ul>
           <h2>Last.fm</h2>
           <ul class="feed" id="lastfm">
             {{#lastfm}}
-            <li><a href="{{url}}">{{title}}</a></li>
+              <li><a href="{{url}}">{{title}}</a></li>
+            {{/lastfm}}
+            {{^lastfm}}
+              <li class="error">an error occured fetching lastfm data</li>
             {{/lastfm}}
           </ul>
           <h2>Github</h2>
           <ul class="feed" id="github">
             {{#github}}
-            <li>{{title}} - <em>{{time_ago}}</em></li>
+              <li>{{title}} - <em>{{time_ago}}</em></li>
+            {{/github}}
+            {{^github}}
+              <li class="error">an error occured fetching github data</li>
             {{/github}}
           </ul>
         </div>
       </div>
     </section>
     <footer class="inner-box">
-      Granze.net is powered by <a href="http://nodejs.org/">Node</a> and <a href="http://expressjs.com/">Express</a>
+      Granze.net is powered by <a href="http://nodejs.org/">Node.js</a> and <a href="http://expressjs.com/">Express</a>
     </footer>
   </body>
 </html>

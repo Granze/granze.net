@@ -8,6 +8,7 @@ $mainBg: #565656;
 $mainColor: #c0c0c0;
 $linkColor: #ebebeb;
 $altColor: #70bc52;
+$darkColor: rgba(#333, .1);
 
 body {
   margin: auto;
@@ -69,9 +70,22 @@ header {
 #twitter {
   li {
     margin: 4px 0;
-    padding: 4px;
-    background-color: rgba(#333, .1);
+    padding: 8px;
+    border-bottom: 1px solid darken($darkColor, 5);
+    background-color: $darkColor;
   }
+}
+.btn-twitter {
+  text-align: right;
+  iframe {
+    opacity: .5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.date, .crag {
+  color: darken($mainColor, 25);
 }
 .code {
   font-family: Courier, cursive;

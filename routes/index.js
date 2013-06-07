@@ -4,6 +4,7 @@ exports.index = function(req, res){
       config = require('../config.js'),
       parser = require('rssparser'),
       async = require('async'),
+      relativeDate = require('relative-date'),
       options = {headers:{'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1468.0 Safari/537.36'}};
 
   twitter = new twitter(config.consumerKey, config.consumerSecret, config.accessToken, config.accessSecret, 3600);
@@ -42,12 +43,14 @@ exports.index = function(req, res){
     },
     twitter: function(callback){
       twitter.get('statuses/user_timeline', function(error, out) {
-        var tweets = JSON.parse(out).slice(0,10),
+        var tweets = JSON.parse(out),
             tweetsData = [];
-        for (var i = 0; i < tweets.length; i++) {
-          var text = tweets[i].text;
+        for (var i = 0; i < 10; i++) {
+          var created_at = tweets[i].created_at,
+              text = tweets[i].text,
+              id_str = tweets[i].id_str;
 
-          tweetsData.push({text: text});
+          tweetsData.push({date: relativeDate(new Date(created_at)), text: text, id: id_str});
         }
         callback(null, tweetsData);
       });

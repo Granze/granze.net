@@ -12,7 +12,8 @@
     "sass": "*",
     "rssparser": "0.0.3",
     "async": "~0.2.8",
-    "simple-twitter": "~1.0.3"
+    "simple-twitter": "~1.0.3",
+    "relative-date": "~1.1.1"
   },
   "devDependencies": {
     "nodemon": "~0.7.8",
