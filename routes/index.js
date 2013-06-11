@@ -16,13 +16,14 @@ exports.index = function(req, res){
             items = out.items.slice(0,10);
 
         for (var i = 0; i < items.length; i++) {
-          var ascent = out.items[i].summary.split('<br>'),
+          var ascent = items[i].summary.split('<br>'),
               route = ascent[0].split(','),
               grade = route[0].slice(-3).trim(),
               name = route[0].slice(0, -3).trim(),
-              crag = route[1];
+              crag = route[1],
+              date = items[i].time_ago;
 
-              ascentData.push({route: name, grade: grade, crag: crag});
+              ascentData.push({route: name, grade: grade, crag: crag, date: date});
         }
         callback(null, ascentData);
       });

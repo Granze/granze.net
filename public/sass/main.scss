@@ -10,9 +10,13 @@ $linkColor: #ebebeb;
 $altColor: #70bc52;
 $darkColor: rgba(#333, .1);
 
+@include font-face("entypo social", font-files("entypo-social.woff", "entypo-social.ttf", "entypo-social.svg"), "entypo-social.eot");
+
+::selection {
+  color: #fff;
+  background-color: $altColor;
+}
 body {
-  margin: auto;
-  max-width: 960px;
   font-family: Arial, Helvetica, sans-serif;
   color: $mainColor;
   background-color: $mainBg;
@@ -43,6 +47,10 @@ a {
     color: $altColor;
   }
 }
+.wrapper {
+  margin: auto;
+  max-width: 960px;
+}
 header {
   border-bottom: 2px solid darken($altColor, 5);
   background-color: $altColor;
@@ -66,6 +74,9 @@ header {
 .feed {
   padding: 0;
   list-style: none;
+  li {
+    margin-bottom: 4px;
+  }
 }
 #twitter {
   li {
@@ -87,6 +98,28 @@ header {
 .date, .crag {
   color: darken($mainColor, 25);
 }
+.grade {
+  color: $linkColor;
+}
 .code {
+  font-size: 1.5em;
   font-family: Courier, cursive;
+  @include text-shadow(none);
+}
+footer {
+  border-top: 1px solid darken($mainBg, 6);
+  border-bottom: 4px solid $altColor;
+  background-color: darken($mainBg, 3);
+}
+.contacts {
+  font-family: "entypo social";
+  a {
+    margin-right: 4px;
+    font-size: 4em;
+    text-decoration: none;
+  }
+}
+.credits {
+  text-align: right;
+  font-size: .8em;
 }

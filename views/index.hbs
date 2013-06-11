@@ -17,73 +17,89 @@
   </head>
   </head>
   <body>
-    <header class="inner-box">
-      <h1>Granze</h1>
-    </header>
-    <section id="main" class="pure-g-r">
-      <p class="intro pure-u-1 inner-box">I love climbing but, unfortunately, this doesn't help me bring home the bacon.<br>For this reason, I spend most of my time working as software engineer.</p>
-      <div class="pure-u-1-2">
-        <div class="inner-box">
-          <h2>Twitter</h2>
-          <ul class="feed" id="twitter">
-            {{#twitter}}
-              <li><time class="date">{{date}}</time> - {{text}} | <a href="https://twitter.com/granze/status/{{id}}">details</a></li>
-            {{/twitter}}
-            {{^twitter}}
-              <li class="error">an error occured fetching twitter data</li>
-            {{/twitter}}
-          </ul>
-          <div class="btn-twitter">
-            <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @granze</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <div class="wrapper">
+      <header class="inner-box">
+        <h1>Granze</h1>
+      </header>
+      <section id="main" class="pure-g-r">
+        <p class="intro pure-u-1 inner-box">I love climbing but, unfortunately, this doesn't help me bring home the bacon.<br>For this reason, I spend most of my time working as software engineer.</p>
+        <div class="pure-u-1-2">
+          <div class="inner-box">
+            <h2>Twitter</h2>
+            <ul class="feed" id="twitter">
+              {{#twitter}}
+                <li><time class="date">{{date}}</time> - {{text}} | <a href="https://twitter.com/granze/status/{{id}}">details</a></li>
+              {{/twitter}}
+              {{^twitter}}
+                <li class="error">an error occured fetching twitter data</li>
+              {{/twitter}}
+            </ul>
+            <div class="btn-twitter">
+              <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @granze</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+            <h2>About me</h2>
+            <h3 class="code">&lt;head&gt;</h3>
+            <p>I've always been fascinated by computers, my very first love was a Commodore 64. I wasn't really a Basic programming badass but, who cares, I had a lot of fun with it.</p>
+            <p>In 2000 I started working as web designer for a small web agency in Merano (the town in north Italy where I was born). I quickly realized this was the job I wanted to do but, in a city like mine, it would not be easy. For this reason, the following year, I decided to move to Milan.</p>
+            <p>I'm specialized in cutting-edge, standard compliant web interfaces developing, with wide experience in high traffic website optimization. My technical skills include XHTML, CSS and Javascript developing. I have skills in team leading and problem solving activities as well.</p>
+            <p>The experience gained over the last 10 years, allowed me to work and to coordinate teams for clients such Corriere della Sera, Gazzetta dello Sport, Unicredit, Tradinglab, Lavazza, Donna Moderna (Mondadori), RAS and others.</p>
+            <p>If you want to learn more about my professional profile, please visit my <a href="http://www.linkedin.com/in/granze">Linkedin page</a></p>
+            <h3 class="code">&lt;body&gt;</h3>
+            <p>I started climbing in September 2007: love at first sight!</p>
+            <p>The bad thing is that I started at the age of 32 (sigh!), the good thing is that climbing changed my life. This can maybe sound as an exaggeration, but is real! Climbing changed my habits, my friendships and the way I spend my time during the week.</p>
+            <p>Climbing is really important for me and I'm putting a lot of effort in it, trying to push the limits to see what can I achieve.<br />For now, my best performances are 8a on sport routes and 7b+ on boulders. Not really big numbers but well, is not so bad at all and I know I will do more.</p>
           </div>
-          <h2>About me</h2>
-          <h3 class="code">&lt;head&gt;</h3>
-          <p>I've always been fascinated by computers, my very first love was a Commodore 64. I wasn't really a Basic programming badass but, who cares, I had a lot of fun with it.</p>
-          <p>In 2000 I started working as web designer for a small web agency in Merano (the town in north Italy where I was born). I quickly realized this was the job I wanted to do but, in a city like mine, it would not be easy. For this reason, the following year, I decided to move to Milan.</p>
-          <p>I'm specialized in cutting-edge, standard compliant web interfaces developing, with wide experience in high traffic website optimization. My technical skills include XHTML, CSS and Javascript developing. I have skills in team leading and problem solving activities as well.</p>
-          <p>The experience gained over the last 10 years, allowed me to work and to coordinate teams for clients such Corriere della Sera, Gazzetta dello Sport, Unicredit, Tradinglab, Lavazza, Donna Moderna (Mondadori), RAS and others.</p>
-          <p>If you want to learn more about my professional profile, please visit my <a href="http://www.linkedin.com/in/granze">Linkedin page</a></p>
-          <h3 class="code">&lt;body&gt;</h3>
-          <p>I started climbing in September 2007: love at first sight!</p>
-          <p>The bad thing is that I started at the age of 32 (sigh!), the good thing is that climbing changed my life. This can maybe sound as an exaggeration, but is real! Climbing changed my habits, my friendships and the way I spend my time during the week.</p>
-          <p>Climbing is really important for me and I'm putting a lot of effort in it, trying to push the limits to see what can I achieve.<br />For now, my best performances are 8a on sport routes and 7b+ on boulders. Not really big numbers but well, is not so bad at all and I know I will do more.</p>
         </div>
-      </div>
-      <div class="pure-u-1-2">
-        <div class="inner-box">
-          <h2>8a.nu</h2>
-          <ul class="feed" id="ottoa">
-            {{#ottoa}}
-              <li>{{route}} <strong>{{grade}}</strong> - <em class="crag">{{crag}}</em></li>
-            {{/ottoa}}
-            {{^ottoa}}
-              <li class="error">an error occured fetching 8a.nu data</li>
-            {{/ottoa}}
-          </ul>
-          <h2>Last.fm</h2>
-          <ul class="feed" id="lastfm">
-            {{#lastfm}}
-              <li><a href="{{url}}">{{title}}</a></li>
-            {{/lastfm}}
-            {{^lastfm}}
-              <li class="error">an error occured fetching lastfm data</li>
-            {{/lastfm}}
-          </ul>
-          <h2>Github</h2>
-          <ul class="feed" id="github">
-            {{#github}}
-              <li>{{title}} - <em>{{time_ago}}</em></li>
-            {{/github}}
-            {{^github}}
-              <li class="error">an error occured fetching github data</li>
-            {{/github}}
-          </ul>
+        <div class="pure-u-1-2">
+          <div class="inner-box">
+            <h2>8a.nu</h2>
+            <ul class="feed" id="ottoa">
+              {{#ottoa}}
+                <li><time class="date">{{date}}</time> - {{route}} <strong class="grade">{{grade}}</strong> <em class="crag">({{crag}})</em></li>
+              {{/ottoa}}
+              {{^ottoa}}
+                <li class="error">an error occured fetching 8a.nu data</li>
+              {{/ottoa}}
+            </ul>
+            <h2>Last.fm</h2>
+            <ul class="feed" id="lastfm">
+              {{#lastfm}}
+                <li><a href="{{url}}">{{title}}</a></li>
+              {{/lastfm}}
+              {{^lastfm}}
+                <li class="error">an error occured fetching lastfm data</li>
+              {{/lastfm}}
+            </ul>
+            <h2>Github</h2>
+            <ul class="feed" id="github">
+              {{#github}}
+                <li>{{title}} - <em>{{time_ago}}</em></li>
+              {{/github}}
+              {{^github}}
+                <li class="error">an error occured fetching github data</li>
+              {{/github}}
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
     <footer class="inner-box">
-      Granze.net is powered by <a href="http://nodejs.org/">Node.js</a> and <a href="http://expressjs.com/">Express</a>
+      <div class="wrapper">
+        <div class="contacts">
+          <a href="https://github.com/Granze">&#62208;</a>
+          <a href="http://www.linkedin.com/in/granze">&#62232;</a>
+          <a href="http://vimeo.com/granze">&#62214;</a>
+          <a href="https://twitter.com/#!/granze">&#62217;</a>
+          <a href="http://last.fm/user/granzebru">&#62241;</a>
+          <a href="http://open.spotify.com/user/1166716957">&#62248;</a>
+          <a href="https://plus.google.com/u/0/104973120103840514441">&#62223;</a>
+          <a href="http://facebook.com/granze">&#62220;</a>
+        </div>
+        <p class="credits">
+          Granze.net is powered by: <a href="http://nodejs.org/">Node.js</a>, <a href="http://expressjs.com/">Express</a>, <a href="http://www.entypo.com/">Entypo pictograms</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>
