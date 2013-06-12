@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="inner-box">
+      <header>
         <h1>Granze</h1>
       </header>
       <section id="main" class="pure-g-r">
@@ -74,7 +74,7 @@
             <h2>Github</h2>
             <ul class="feed" id="github">
               {{#github}}
-                <li>{{title}} - <em>{{time_ago}}</em></li>
+                <li><time class="date">{{time_ago}}</time> - {{title}}</li>
               {{/github}}
               {{^github}}
                 <li class="error">an error occured fetching github data</li>

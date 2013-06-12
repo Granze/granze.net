@@ -28,8 +28,13 @@ h1 {
     family: Georgia, Palatino, serif;
     size: 4em;
   }
+  text-align: center;
   color: rgba(#fff, .7);
   @include text-shadow(-1px -1px 1px rgba($mainBg, .4));
+  span {
+    display: block;
+    font-size: .4em;
+  }
 }
 h2, h3, h4, h5 {
   font-family: 'Bevan', cursive;
@@ -49,7 +54,10 @@ a {
 }
 .wrapper {
   margin: auto;
-  max-width: 960px;
+  max-width: 1224px;
+  @media screen and(max-width: 1024px) {
+    max-width: 960px;
+  }
 }
 header {
   border-bottom: 2px solid darken($altColor, 5);
@@ -69,21 +77,20 @@ header {
   color: lighten($mainColor, 10);
   border-bottom: 1px solid darken($mainBg, 6);
   background-color: darken($mainBg, 3);
+  text-align: center;
   @include text-shadow(1px 1px 1px darken($mainBg, 15));
 }
 .feed {
   padding: 0;
   list-style: none;
   li {
-    margin-bottom: 4px;
-  }
-}
-#twitter {
-  li {
     margin: 4px 0;
     padding: 8px;
     border-bottom: 1px solid darken($darkColor, 5);
     background-color: $darkColor;
+    &:hover {
+      background-color: darken($darkColor, 20);
+    }
   }
 }
 .btn-twitter {
@@ -114,9 +121,15 @@ footer {
 .contacts {
   font-family: "entypo social";
   a {
-    margin-right: 4px;
+    margin-right: 10px;
     font-size: 4em;
     text-decoration: none;
+    &:hover {
+      @include perspective(800px);
+      @include perspective-origin(50% 100px);
+      @include single-transition(all 2s ease-in-out);
+      @include rotateY(180deg);
+    }
   }
 }
 .credits {
