@@ -1,5 +1,7 @@
 exports.index = function(req, res){
 
+  'use strict';
+
   var twitter = require('simple-twitter'),
       config = require('../config.js'),
       parser = require('rssparser'),
