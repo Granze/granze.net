@@ -30,9 +30,13 @@ exports.index = function(req, res){
         callback(null, ascentData);
       });
     },
-    lastfm: function(callback){
-      parser.parseURL('http://ws.audioscrobbler.com/1.0/user/granzebru/recenttracks.rss', options, function(err, out){
-        callback(null, out.items);
+    lastfm: function (callback) {
+      parser.parseURL('http://ws.audioscrobbler.com/1.0/user/granzebru/recenttracks.rss', options, function (err, out) {
+        if(err) {
+          callback(null, err);
+        } else {
+          callback(null, out.items);
+        }
       });
     },
     github: function(callback){
