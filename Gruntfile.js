@@ -30,6 +30,12 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
+      },
+      views: {
+        files: '**/*.hbs',
+        options: {
+          livereload: true
+        }
       }
     },
     concurrent: {

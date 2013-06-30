@@ -19,7 +19,9 @@ $darkColor: rgba(#333, .1);
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: $mainColor;
+  border-bottom: 4px solid $altColor;
   background-color: $mainBg;
+  overflow-y: scroll;
 }
 h1 {
   margin: 0;
@@ -28,7 +30,6 @@ h1 {
     family: Georgia, Palatino, serif;
     size: 4em;
   }
-  text-align: center;
   color: rgba(#fff, .7);
   @include text-shadow(-1px -1px 1px rgba($mainBg, .4));
   span {
@@ -59,24 +60,22 @@ a {
     max-width: 960px;
   }
 }
-header {
-  border-bottom: 2px solid darken($altColor, 5);
+#main-header {
+  margin: 20px 0;
+  padding: 0 20px;
   background-color: $altColor;
 }
 .inner-box {
   padding: 1em;
 }
 #main {
-  border-top: 2px solid darken($mainBg, 10);
 }
 .intro {
   margin: 0 1px;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-style: italic;
   font-family: Georgia, Palatino, serif;
   color: lighten($mainColor, 10);
-  border-bottom: 1px solid darken($mainBg, 6);
-  background-color: darken($mainBg, 3);
   text-align: center;
   @include text-shadow(1px 1px 1px darken($mainBg, 15));
 }
@@ -89,6 +88,7 @@ header {
     border-bottom: 1px solid darken($darkColor, 5);
     background-color: $darkColor;
     &:hover {
+      @include transition(background-color .3s ease-out);
       background-color: darken($darkColor, 20);
     }
   }
@@ -115,7 +115,6 @@ header {
 }
 footer {
   border-top: 1px solid darken($mainBg, 6);
-  border-bottom: 4px solid $altColor;
   background-color: darken($mainBg, 3);
 }
 .contacts {
