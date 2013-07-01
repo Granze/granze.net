@@ -30,7 +30,7 @@ h1 {
     family: Georgia, Palatino, serif;
     size: 4em;
   }
-  color: rgba(#fff, .7);
+  color: rgba(#fff, .8);
   @include text-shadow(-1px -1px 1px rgba($mainBg, .4));
   span {
     display: block;
@@ -63,6 +63,8 @@ a {
 #main-header {
   margin: 20px 0;
   padding: 0 20px;
+  border-top: 2px solid darken($altColor, 10);
+  border-bottom: 2px solid darken($altColor, 10);
   background-color: $altColor;
 }
 .inner-box {
