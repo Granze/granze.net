@@ -10,7 +10,7 @@ $linkColor: #ebebeb;
 $altColor: #70bc52;
 $darkColor: rgba(#333, .1);
 
-@include font-face("entypo social", font-files("entypo-social.woff", "entypo-social.ttf", "entypo-social.svg"), "entypo-social.eot");
+@include font-face("social", font-files("social.woff", "social.ttf", "social.svg"), "social.eot");
 
 ::selection {
   color: #fff;
@@ -120,10 +120,11 @@ footer {
   background-color: darken($mainBg, 3);
 }
 .contacts {
-  font-family: "entypo social";
+  text-align: center;
+  font-family: "social";
   a {
     margin-right: 10px;
-    font-size: 4em;
+    font-size: 2em;
     text-decoration: none;
     &:hover {
       @include perspective(800px);
@@ -134,6 +135,6 @@ footer {
   }
 }
 .credits {
-  text-align: right;
+  text-align: center;
   font-size: .8em;
 }

@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+  'use strict';
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
@@ -25,17 +27,14 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: '**/*.scss',
-        tasks: ['compass'],
         options: {
           livereload: true
-        }
+        },
+        files: '**/*.scss',
+        tasks: ['compass']
       },
       views: {
-        files: '**/*.hbs',
-        options: {
-          livereload: true
-        }
+        files: '**/*.hbs'
       }
     },
     concurrent: {
