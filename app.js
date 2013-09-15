@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
@@ -14,6 +16,7 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+  hbs.registerPartials(__dirname + '/views/partials');
 });
 
 app.configure('development', function(){
