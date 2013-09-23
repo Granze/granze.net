@@ -31,7 +31,7 @@ exports.index = function(req, res){
       });
     },
     lastfm: function (callback) {
-      parser.parseURL('http://ws.audioscrobbler.com/1.0/user/granzebru/recenttracks.rss', options, function (err, out) {
+      parser.parseURL('http://ws.audioscrobbler.com/1.0/user/granzebru/recenttracks.rss', function (err, out) {
         if(err) {
           callback(null, err);
         } else {
@@ -40,7 +40,7 @@ exports.index = function(req, res){
       });
     },
     github: function(callback){
-      parser.parseURL('https://github.com/Granze.atom', options, function(err, out){
+      parser.parseURL('https://github.com/Granze.atom', function(err, out){
         if(err) {
           callback(null, err);
         } else {
