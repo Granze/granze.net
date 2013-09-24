@@ -4,7 +4,10 @@
       bacon.<br>For this reason, I spend most of my time working as software engineer.</p>
     <div class="pure-u-1-2">
       <div class="inner-box">
-        <h2>Twitter</h2>
+        <header class="hgroup">
+          <h2>Twitter</h2>
+          <h3>my tweets</h3>
+        </header>
         <ul class="feed" id="twitter">
             {{#twitter}}
               <li>
@@ -26,7 +29,10 @@
           }(document, "script", "twitter-wjs");
           </script>
         </div>
-        <h2>Github</h2>
+        <header class="hgroup">
+          <h2>Github</h2>
+          <h3>my Github activities</h3>
+        </header>
         <ul class="feed" id="github">
           {{#github}}
             <li><span class="date">{{time_ago}}</span> - {{title}}</li>
@@ -36,13 +42,19 @@
     </div>
     <div class="pure-u-1-2">
       <div class="inner-box">
-        <h2>8a.nu</h2>
+        <header class="hgroup">
+          <h2>8a.nu</h2>
+          <h3>my climbing ascents</h3>
+        </header>
         <ul class="feed" id="ottoa">
             {{#ottoa}}
               <li><span class="date">{{date}}</span> - {{route}} <strong class="grade">{{grade}}</strong> <em class="crag">({{crag}})</em></li>
             {{/ottoa}}
         </ul>
-        <h2>Last.fm</h2>
+        <header class="hgroup">
+          <h2>Last.fm</h2>
+          <h3>what I'm listening to</h3>
+        </header>
         <ul class="feed" id="lastfm">
             {{#lastfm}}
               <li><a href="{{url}}">{{title}}</a></li>

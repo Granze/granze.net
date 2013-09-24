@@ -10,14 +10,18 @@ $linkColor: #ebebeb;
 $altColor: #70bc52;
 $darkColor: rgba(#333, .1);
 
+$fontSans: Arial, Helvetica, sans-serif;
+
+$titleHeight: 40px;
+
 @include font-face("social", font-files("social.woff", "social.ttf", "social.svg"), "social.eot");
 
 ::selection {
-  color: #fff;
+  color: white;
   background-color: $altColor;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $fontSans;
   color: $mainColor;
   border-bottom: 4px solid $altColor;
   background-color: $mainBg;
@@ -28,15 +32,15 @@ h1 {
   padding: 0;
   font: {
     family: Georgia, Palatino, serif;
-    size: 4em;
-  }
-  color: rgba(#fff, .8);
-  @include text-shadow(0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25));
+    size: 1em;
+  };
+  color: $mainBg;
   @include transition(all 0.3s ease-out);
   a {
+    font-size: 4em;
     text-decoration: none;
     &:hover {
-      color: rgba(#fff, 1);
+      color: lighten($linkColor, 10%);
     }
   }
   span {
@@ -44,15 +48,44 @@ h1 {
     font-size: .4em;
   }
 }
+header.hgroup {
+  position: relative;
+  overflow: hidden;
+  height: $titleHeight;
+  margin: .9em 0;
+  &:hover {
+    h2 {
+      @include translateY(-40px);
+    }
+    h3 {
+      @include translateY(-40px);
+    }
+  }
+  h2 {
+    height: $titleHeight;
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: .1em;
+    @include translateY(0);
+    @include transition(all 0.2s ease-out);
+  }
+  h3 {
+    height: $titleHeight;
+    line-height: $titleHeight;
+    margin: 0;
+    padding: 0 10px;
+    font-family: $fontSans;
+    color: $altColor;
+    background-color: darken($mainBg, 1%);
+    @include translateY(40px);
+    @include transition(all 0.2s ease-out);
+  }
+}
 h2, h3, h4, h5 {
   font-family: 'Bevan', cursive;
   font-weight: normal;
   color: lighten($mainBg, 15);
   @include text-shadow(-1px -1px 1px darken($mainBg, 10));
-}
-h2 {
-  font-size: 2em;
-  letter-spacing: .1em;
 }
 a {
   color: $linkColor;
