@@ -1,80 +1,19 @@
-<!--
-     GRANZE V2 - NODE/EXPRESS VERSION
-
-                 uuuuuuu
-             uu$$$$$$$$$$$uu
-          uu$$$$$$$$$$$$$$$$$uu
-         u$$$$$$$$$$$$$$$$$$$$$u
-        u$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$"   "$$$"   "$$$$$$u
-       "$$$$"      u$u       $$$$"
-        $$$u       u$u       u$$$
-        $$$u      u$$$u      u$$$
-         "$$$$uu$$$   $$$uu$$$$"
-          "$$$$$$$"   "$$$$$$$"
-            u$$$$$$$u$$$$$$$u
-             u$"$"$"$"$"$"$u
-  uuu        $$u$ $ $ $ $u$$       uuu
- u$$$$        $$$$$u$u$u$$$       u$$$$
-  $$$$$uu      "$$$$$$$$$"     uu$$$$$$
-u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
-$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
- """      ""$$$$$$$$$$$uu ""$"""
-           uuuu ""$$$$$$$$$$uuu
-  u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
-  $$$$$$$$$$""""           ""$$$$$$$$$$$"
-   "$$$$$"                      ""$$$$""
-     $$$"                         $$$$"
-
--->
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<head>
-  <title>Maurizio Mangione A.K.A. Granze</title>
-  <meta charset="utf-8">
-  <meta name="description" content="Personal website of Maurizio Mangione A.K.A. Granze">
-  <meta name="keywords"
-        content="Maurizio Mangione, Granze, climbing, front end, developer, javascript, jquery, UI, user interface, html5, css3">
-  <meta name="author" content="Maurizio Mangione">
-  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
-  <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-</head>
-<body>
-<header id="main-header" class="shadow-top">
-  <h1 class="wrapper">Granze</h1>
-</header>
-<div class="wrapper">
+{{> header}}
   <section id="main" class="pure-g-r">
     <p class="intro pure-u-1 inner-box">I love climbing but, unfortunately, this doesn't help me bring home the
       bacon.<br>For this reason, I spend most of my time working as software engineer.</p>
-
     <div class="pure-u-1-2">
       <div class="inner-box">
         <h2>Twitter</h2>
         <ul class="feed" id="twitter">
             {{#twitter}}
               <li>
-                <time class="date">{{date}}</time>
-                - {{text}} | <a href="https://twitter.com/granze/status/{{id}}">details</a></li>
-            {{/twitter}}
-            {{^twitter}}
-              <li class="error">an error occured fetching twitter data</li>
+                <span class="date">{{date}}</span> - {{text}} | <a href="https://twitter.com/granze/status/{{id}}">details</a>
+              </li>
             {{/twitter}}
         </ul>
         <div class="btn-twitter">
-          <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en"
-             data-size="large">Follow @granze</a>
+          <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @granze</a>
           <script>
             !function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -87,39 +26,12 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
           }(document, "script", "twitter-wjs");
           </script>
         </div>
-        <h2>About me</h2>
-
-        <h3 class="code">&lt;head&gt;</h3>
-
-        <p>I've always been fascinated by computers, my very first love was a Commodore 64. I wasn't really a Basic
-          programming language badass but, who cares, I had a lot of fun with it.</p>
-
-        <p>In 2000 I started working as web designer for a small web agency in Merano (the town in north Italy where I
-          was born). I quickly realized this was the job I wanted to do but, in a city like mine, it would not be easy.
-          For this reason, the following year, I decided to move to Milan.</p>
-
-        <p>I'm specialized in cutting-edge, standard compliant web interfaces developing, with wide experience in high
-          traffic website optimization. My technical skills include XHTML, CSS and Javascript developing. I have skills
-          in team leading and problem solving activities as well.</p>
-
-        <p>The experience gained over the last 10 years, allowed me to work and to coordinate teams for clients such
-          Corriere della Sera, Gazzetta dello Sport, Unicredit, Tradinglab, Lavazza, Donna Moderna (Mondadori), RAS and
-          others.</p>
-
-        <p>If you want to learn more about my professional profile, please visit my <a
-            href="http://www.linkedin.com/in/granze">Linkedin page</a></p>
-
-        <h3 class="code">&lt;body&gt;</h3>
-
-        <p>I started climbing in September 2007: love at first sight!</p>
-
-        <p>The bad thing is that I started at the age of 32 (sigh!), the good thing is that climbing changed my life.
-          This can maybe sound as an exaggeration, but is real! Climbing changed my habits, my friendships and the way I
-          spend my time during the week.</p>
-
-        <p>Climbing is really important for me and I'm putting a lot of effort in it, trying to push the limits to see
-          what can I achieve.<br/>For now, my best performances are 8a on sport routes and 7b+ on boulders. Not really
-          big numbers but well, is not so bad at all and I know I will do more.</p>
+        <h2>Github</h2>
+        <ul class="feed" id="github">
+          {{#github}}
+            <li><span class="date">{{time_ago}}</span> - {{title}}</li>
+          {{/github}}
+        </ul>
       </div>
     </div>
     <div class="pure-u-1-2">
@@ -127,12 +39,7 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
         <h2>8a.nu</h2>
         <ul class="feed" id="ottoa">
             {{#ottoa}}
-              <li>
-                <time class="date">{{date}}</time>
-                - {{route}} <strong class="grade">{{grade}}</strong> <em class="crag">({{crag}})</em></li>
-            {{/ottoa}}
-            {{^ottoa}}
-              <li class="error">an error occured fetching 8a.nu data</li>
+              <li><span class="date">{{date}}</span> - {{route}} <strong class="grade">{{grade}}</strong> <em class="crag">({{crag}})</em></li>
             {{/ottoa}}
         </ul>
         <h2>Last.fm</h2>
@@ -140,40 +47,8 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
             {{#lastfm}}
               <li><a href="{{url}}">{{title}}</a></li>
             {{/lastfm}}
-            {{^lastfm}}
-              <li class="error">an error occured fetching lastfm data</li>
-            {{/lastfm}}
-        </ul>
-        <h2>Github</h2>
-        <ul class="feed" id="github">
-            {{#github}}
-              <li>
-                <time class="date">{{time_ago}}</time>
-                - {{title}}</li>
-            {{/github}}
-            {{^github}}
-              <li class="error">an error occured fetching github data</li>
-            {{/github}}
         </ul>
       </div>
     </div>
   </section>
-</div>
-<footer class="inner-box">
-  <div class="wrapper">
-    <div class="contacts">
-      <a href="https://github.com/Granze">&#xe001;</a>
-      <a href="http://www.linkedin.com/in/granze">&#xe004;</a>
-      <a href="http://vimeo.com/granze">&#xe000;</a>
-      <a href="https://twitter.com/#!/granze">&#xe005;</a>
-      <a href="http://last.fm/user/granzebru">&#xe003;</a>
-      <a href="https://plus.google.com/u/0/104973120103840514441">&#xe006;</a>
-      <a href="https://www.facebook.com/granze">&#xe002;</a>
-    </div>
-    <p class="credits">
-      Granze.net is powered by: <a href="http://nodejs.org/">Node.js</a> and <a href="http://expressjs.com/">Express</a>
-    </p>
-  </div>
-</footer>
-</body>
-</html>
+{{> footer}}
