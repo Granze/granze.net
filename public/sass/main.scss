@@ -144,7 +144,9 @@ a {
   }
 }
 .btn-twitter {
-  text-align: right;
+  position: absolute;
+  right: 10px;
+  top: 5px;
   iframe {
     opacity: .5;
     &:hover {
@@ -175,12 +177,6 @@ footer {
     margin-right: 10px;
     font-size: 2em;
     text-decoration: none;
-    &:hover {
-      @include perspective(800px);
-      @include perspective-origin(50% 100px);
-      @include single-transition(all 2s ease-in-out);
-      @include rotateY(180deg);
-    }
   }
 }
 .credits {
