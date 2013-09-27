@@ -12,7 +12,7 @@ $darkColor: rgba(#333, .1);
 
 $fontSans: Arial, Helvetica, sans-serif;
 
-$titleHeight: 40px;
+$titleHeight: 41px;
 
 @include font-face("social", font-files("social.woff", "social.ttf", "social.svg"), "social.eot");
 
@@ -35,7 +35,6 @@ h1 {
     size: 1em;
   };
   color: $mainBg;
-  @include transition(all 0.3s ease-out);
   a {
     font-size: 4em;
     text-decoration: none;
@@ -47,6 +46,9 @@ h1 {
     display: block;
     font-size: .4em;
   }
+}
+h2 {
+  font-size: 2em;
 }
 header.hgroup {
   position: relative;
@@ -64,19 +66,19 @@ header.hgroup {
   h2 {
     height: $titleHeight;
     margin: 0;
-    font-size: 2em;
     letter-spacing: .1em;
     @include translateY(0);
     @include transition(all 0.2s ease-out);
   }
   h3 {
-    height: $titleHeight;
-    line-height: $titleHeight;
+    height: $titleHeight - 2px;
+    line-height: $titleHeight - 1px;
     margin: 0;
     padding: 0 10px;
     font-family: $fontSans;
     color: $altColor;
-    background-color: darken($mainBg, 1%);
+    border-bottom: 1px solid $altColor;
+    background-color: $darkColor;
     @include translateY(40px);
     @include transition(all 0.2s ease-out);
   }
@@ -121,12 +123,15 @@ a {
 #main {
 }
 .intro {
-  margin: 0 1px;
+  margin: -20px 0 0 0;
+  padding: 20px 0;
   font-size: 1.6em;
   font-style: italic;
   font-family: Georgia, Palatino, serif;
   color: lighten($mainColor, 10);
   text-align: center;
+  border-bottom: 1px solid darken($darkColor, 6);
+  background-color: $darkColor;
   @include text-shadow(1px 1px 1px darken($mainBg, 15));
 }
 .feed {
@@ -137,9 +142,15 @@ a {
     padding: 8px;
     border-bottom: 1px solid darken($darkColor, 5);
     background-color: $darkColor;
+    @include transition(all .4s ease-out);
     &:hover {
-      @include transition(background-color .3s ease-out);
       background-color: darken($darkColor, 20);
+      @include scale(1.05);
+      @include transition(all .2s ease-out);
+      + li {
+        @include scale(1.02);
+        @include transition(all .2s ease-out);
+      }
     }
   }
 }
@@ -166,8 +177,8 @@ a {
   @include text-shadow(none);
 }
 footer {
-  border-top: 1px solid darken($mainBg, 6);
-  background-color: darken($mainBg, 3);
+  border-top: 1px solid darken($darkColor, 6);
+  background-color: $darkColor;
 }
 .contacts {
   text-align: center;
