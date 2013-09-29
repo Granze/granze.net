@@ -52,6 +52,14 @@ h1 {
 }
 h2 {
   font-size: 2em;
+  font-family: 'Bevan', cursive;
+  &.internal {
+    margin: 0;
+  }
+}
+h3 {
+  margin: 0;
+  font-size: 1.5em;
 }
 header.hgroup {
   position: relative;
@@ -76,9 +84,8 @@ header.hgroup {
   h3 {
     height: $titleHeight - 2px;
     line-height: $titleHeight - 1px;
-    margin: 0;
     padding: 0 10px;
-    font-family: $fontSans;
+    font-size: 1.2em;
     color: $altColor;
     border-bottom: 1px solid $altColor;
     background-color: $darkColor;
@@ -87,7 +94,6 @@ header.hgroup {
   }
 }
 h2, h3, h4, h5 {
-  font-family: 'Bevan', cursive;
   font-weight: normal;
   color: lighten($mainBg, 15);
   @include text-shadow(-1px -1px 1px darken($mainBg, 10));
