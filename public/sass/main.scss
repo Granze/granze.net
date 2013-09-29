@@ -1,7 +1,7 @@
-@import "normalize",
-        "compass/css3",
-        "pure",
-        "pure-granze";
+@import 'normalize',
+        'compass/css3',
+        'pure',
+        'pure-granze';
 
 //vars
 $mainBg: #565656;
@@ -35,6 +35,9 @@ h1 {
     size: 1em;
   };
   color: $mainBg;
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    font-size: .6em;
+  }
   a {
     font-size: 4em;
     text-decoration: none;
@@ -94,6 +97,11 @@ a {
   &:hover {
     color: $altColor;
   }
+  &.more {
+    position: absolute;
+    right: 10px;
+    top: 0;
+  }
 }
 .wrapper {
   position: relative;
@@ -108,19 +116,27 @@ a {
   margin: 20px 0;
   padding: 0 20px;
   background-color: $altColor;
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    margin-top: 0;
+  }
 }
 #about {
+  z-index: 10;
   position: absolute;
   top: -20px;
   right: 0;
-  padding: 5px 10px;
+  display: inline-block;
+  padding: 10px 20px;
   border-radius: 0 0 4px 4px;
   background-color: darken($mainBg, 10%);
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    top: 7px;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
 }
 .inner-box {
   padding: 1em;
-}
-#main {
 }
 .intro {
   margin: -20px 0 0 0;
@@ -133,6 +149,9 @@ a {
   border-bottom: 1px solid darken($darkColor, 6);
   background-color: $darkColor;
   @include text-shadow(1px 1px 1px darken($mainBg, 15));
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    display: none;
+  }
 }
 .feed {
   padding: 0;
