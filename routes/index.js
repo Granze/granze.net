@@ -14,20 +14,24 @@ exports.index = function(req, res){
   async.parallel({
     ottoa: function(callback){
       parser.parseURL('http://www.8a.nu/rss/Main.aspx?UserId=19212&AscentType=0&ObjectClass=2&GID=3974d72911c05719152f0953e88cc2df', options, function(err, out){
-        var ascentData = [],
-            items = out.items.slice(0,10);
+        if(err){
+           callback(null, err);
+        } else {
+          var ascentData = [],
+              items = out.items.slice(0,10);
 
-        for (var i = 0; i < items.length; i++) {
-          var ascent = items[i].summary.split('<br>'),
-              route = ascent[0].split(','),
-              grade = route[0].slice(-3).trim(),
-              name = route[0].slice(0, -3).trim(),
-              crag = route[1],
-              date = items[i].time_ago;
+          for (var i = 0; i < items.length; i++) {
+            var ascent = items[i].summary.split('<br>'),
+                route = ascent[0].split(','),
+                grade = route[0].slice(-3).trim(),
+                name = route[0].slice(0, -3).trim(),
+                crag = route[1],
+                date = items[i].time_ago;
 
-              ascentData.push({route: name, grade: grade, crag: crag, date: date});
+            ascentData.push({route: name, grade: grade, crag: crag, date: date});
+          }
+          callback(null, ascentData);
         }
-        callback(null, ascentData);
       });
     },
     lastfm: function (callback) {
