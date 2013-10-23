@@ -26,12 +26,15 @@ module.exports = function(grunt) {
       }
     },
     watch: {
+      scss: {
+        files: ['**/*.scss'],
+        tasks: ['compass']
+      },
       livereload: {
         options: {
           livereload: true
         },
-        files: ['**/*.scss', '**/*.hbs'],
-        tasks: ['compass']
+        files: ['**/*.hbs','**/*.scss']
       }
     },
     concurrent: {
