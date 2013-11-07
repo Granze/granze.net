@@ -256,9 +256,15 @@ footer {
   font-family: "social";
   color: $mainColor;
   a {
+    display: inline-block;
     margin-right: 10px;
     font-size: 2em;
     text-decoration: none;
+    @include transition(all .8s ease-out);
+    &:hover {
+      @include rotate(360deg);
+      @include transition(all .4s ease-out);
+    }
   }
 }
 .credits {
