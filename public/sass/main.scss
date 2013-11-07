@@ -10,8 +10,11 @@ $linkColor: #ebebeb;
 $altColor: #70bc52;
 $darkColor: rgba(#333, .1);
 
+//fonts
 $fontSans: Arial, Helvetica, sans-serif;
+$fontSlab: 'Bevan', cursive;
 
+//sizes
 $titleHeight: 41px;
 
 @include font-face("social", font-files("social.woff", "social.ttf", "social.svg"), "social.eot");
@@ -56,7 +59,7 @@ h1 {
 }
 h2 {
   font-size: 2em;
-  font-family: 'Bevan', cursive;
+  font-family: $fontSlab;
   &.internal {
     margin: 0;
   }
@@ -97,7 +100,6 @@ header.hgroup {
     @include transition(all 0.2s ease-out);
     i {
       display: inline-block;
-
     }
   }
 }
