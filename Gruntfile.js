@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     nodemon: {
       dev: {}
     },
-    compass: { //compile scss to css
+    compass: {
       dist: {
         options: {
           config: 'config.rb',
