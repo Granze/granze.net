@@ -1,7 +1,7 @@
-granze-v2
+granze.net
 =========
 
-[work in progress] nodejs/express porting of my website (currently in php)
+My personal website in nodejs + express
 
 
 P.S. I'm a Nodejs n00b so, if you have suggestion, just drop me a line!
