@@ -5,6 +5,7 @@ var express = require('express'),
     http = require('http'),
     hbs = require('hbs'),
     path = require('path'),
+    hookshot = require('hookshot'),
     app = express();
 
 app.configure(function(){
@@ -25,6 +26,7 @@ app.configure('development', function(){
 });
 
 //routing
+app.use('/deploy', hookshot('refs/heads/master', 'git pull && pm2 restart all'));
 app.get('/', routes.index);
 app.get('/about', function(req, res){
   res.render('about');
