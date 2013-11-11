@@ -25,7 +25,7 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.use('/deploy', hookshot('refs/heads/master', 'git pull && pm2 restart all'));
+app.use('/deploy', hookshot('refs/heads/master', 'cd ~/www/granze.net && git pull && pm2 restart all'));
 app.get('/', routes.index);
 app.get('/about', function(req, res){
   res.render('about');
