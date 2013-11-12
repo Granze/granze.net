@@ -1,5 +1,5 @@
 {
-  "name": "granzev2",
+  "name": "granze.net",
   "version": "1.0.0",
   "private": true,
   "main": "app.js",
@@ -13,7 +13,7 @@
     "async": "~0.2.8",
     "simple-twitter": "~1.0.3",
     "relative-date": "~1.1.1",
-    "hookshot": "0.0.2"
+    "hookshot": "~0.0.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
