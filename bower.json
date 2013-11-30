@@ -1,6 +1,6 @@
 {
-  "name": "granze-v2",
-  "version": "1.0.0",
+  "name": "granze.net",
+  "version": "1.0.1",
   "dependencies": {
     "pure": "~0.3.0"
   }

@@ -1,7 +1,5 @@
-@import 'normalize',
-        'compass/css3',
-        'pure',
-        'pure-granze';
+@import 'compass/css3/font-face',
+        'pure';
 
 //vars
 $mainBg: #565656;
@@ -24,11 +22,12 @@ $titleHeight: 41px;
   background-color: $altColor;
 }
 body {
+  overflow-y: scroll;
+  margin: 0;
   font-family: $fontSans;
   color: $mainColor;
   border-bottom: 4px solid $altColor;
   background-color: $mainBg;
-  overflow-y: scroll;
 }
 img {
   max-width: 100%;
@@ -47,7 +46,7 @@ h1 {
   a {
     font-size: 4em;
     text-decoration: none;
-    @include transition(all .4s ease-out);
+    transition: all .4s ease-out;
     &:hover {
       color: lighten($linkColor, 10%);
     }
@@ -75,18 +74,18 @@ header.hgroup {
   margin: .9em 0;
   &:hover {
     h2 {
-      @include translateY(-40px);
+      transform: translateY(-40px);
     }
     h3 {
-      @include translateY(-40px);
+      transform: translateY(-40px);
     }
   }
   h2 {
     height: $titleHeight;
     margin: 0;
     letter-spacing: .1em;
-    @include translateY(0);
-    @include transition(all 0.2s ease-out);
+    transform: translateY(0);
+    transition: all 0.2s ease-out;
   }
   h3 {
     height: $titleHeight - 2px;
@@ -96,8 +95,8 @@ header.hgroup {
     color: $altColor;
     border-bottom: 1px solid $altColor;
     background-color: $darkColor;
-    @include translateY(40px);
-    @include transition(all 0.2s ease-out);
+    transform: translateY(40px);
+    transition: all 0.2s ease-out;
     i {
       display: inline-block;
     }
@@ -106,7 +105,7 @@ header.hgroup {
 h2, h3, h4, h5 {
   font-weight: normal;
   color: lighten($mainBg, 15);
-  @include text-shadow(-1px -1px 1px darken($mainBg, 10));
+  text-shadow: -1px -1px 1px darken($mainBg, 10);
 }
 a {
   color: $linkColor;
@@ -136,7 +135,7 @@ a {
   position: relative;
   margin: auto;
   max-width: 1224px;
-  @media screen and(max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     max-width: 960px;
   }
 }
@@ -158,19 +157,19 @@ a {
   padding: 10px 20px;
   border-radius: 0 0 4px 4px;
   background-color: darken($mainBg, 10%);
-  @include transition(all .2s ease-out);
+  transition: all .2s ease-out;
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     top: 8px;
     padding: 8px 16px;
     border-radius: 4px;
-    @include transition(none);
+    transition: none;
     &:hover {
       padding-top: 8px !important;
     }
   }
   &:hover {
     padding-top: 20px;
-    @include transition(all .2s ease-out);
+    transition: all .2s ease-out;
   }
 }
 .inner-box {
@@ -182,12 +181,12 @@ a {
   border: 1px solid darken($darkColor, 6);
   background-color: $darkColor;
   img {
-    @include transition(all .2s ease-out);
+    transition: all .2s ease-out;
   }
   &:hover {
     img {
-      @include transition(all .2s ease-out);
-      @include scale(1.1);
+      transition: all .2s ease-out;
+      transform: scale(1.1);
     }
   }
 }
@@ -201,8 +200,8 @@ a {
   text-align: center;
   border-bottom: 1px solid darken($darkColor, 6);
   background-color: $darkColor;
-  @include text-shadow(1px 1px 1px darken($mainBg, 15));
-  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  text-shadow: 1px 1px 1px darken($mainBg, 15);
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     display: none;
   }
 }
@@ -214,14 +213,14 @@ a {
     padding: 8px;
     border-bottom: 1px solid darken($darkColor, 5);
     background-color: $darkColor;
-    @include transition(all .4s ease-out);
+    transition: all .4s ease-out;
     &:hover {
       background-color: darken($darkColor, 20);
-      @include scale(1.05);
-      @include transition(all .2s ease-out);
+      transform: scale(1.05);
+      transition: all .2s ease-out;
       + li {
-        @include scale(1.02);
-        @include transition(all .2s ease-out);
+        transform: scale(1.02);
+        transition: all .2s ease-out;
       }
     }
   }
@@ -246,7 +245,7 @@ a {
 .code {
   font-size: 1.5em;
   font-family: Courier, cursive;
-  @include text-shadow(none);
+  text-shadow: none;
 }
 footer {
   margin-top: 40px;
@@ -262,10 +261,10 @@ footer {
     margin-right: 10px;
     font-size: 2em;
     text-decoration: none;
-    @include transition(all .8s ease-out);
+    transition: all .8s ease-out;
     &:hover {
-      @include rotate(360deg);
-      @include transition(all .4s ease-out);
+      transform: rotate(360deg);
+      transition: all .4s ease-out;
     }
   }
 }
