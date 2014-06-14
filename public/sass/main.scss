@@ -240,19 +240,23 @@ a {
     }
   }
 }
+
 .date, .crag {
   color: darken($mainColor, 25);
 }
 .grade {
   color: $linkColor;
 }
+
 .code {
   font-size: 1.5em;
   font-family: Courier, cursive;
   text-shadow: none;
 }
+
 footer {
   margin-top: 40px;
+  padding: 20px 0 10px 0;
   border-top: 1px solid darken($darkColor, 6);
   background-color: $darkColor;
 }
