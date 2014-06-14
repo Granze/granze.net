@@ -1,28 +1,28 @@
 {
   "name": "granze.net",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": true,
   "main": "app.js",
   "scripts": {
     "start": "grunt"
   },
   "dependencies": {
+    "async": "~0.2.8",
     "express": "~3.x",
     "hbs": "*",
-    "rssparser": "~0.0.3",
-    "async": "~0.2.8",
-    "simple-twitter": "~1.0.3",
+    "hookshot": "~0.0.2",
     "relative-date": "~1.1.1",
-    "hookshot": "~0.0.2"
+    "rssparser": "~0.0.3",
+    "simple-twitter": "~1.0.3"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-compass": "~0.2.0",
-    "grunt-nodemon": "~0.0.4",
-    "grunt-concurrent": "~0.2.0",
-    "grunt-contrib-watch": "~0.4.4",
-    "load-grunt-tasks": "~0.2.0",
-    "grunt-notify": "~0.2.16"
+    "gulp": "^3.8.0",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-concat": "^2.2.0",
+    "gulp-csso": "^0.2.9",
+    "gulp-imagemin": "^0.6.1",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-plumber": "^0.6.3",
+    "gulp-sass": "^0.7.2"
   }
 }
