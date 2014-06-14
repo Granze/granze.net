@@ -1,23 +1,26 @@
 {
   "name": "granze.net",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "grunt"
+    "start": "gulp"
   },
   "dependencies": {
-    "async": "~0.2.8",
-    "express": "~3.x",
-    "hbs": "*",
-    "hookshot": "~0.0.2",
-    "relative-date": "~1.1.1",
-    "rssparser": "~0.0.3",
-    "simple-twitter": "~1.0.3"
+    "async": "^0.2.10",
+    "body-parser": "^1.3.1",
+    "express": "^4.4.3",
+    "hbs": "^2.7.0",
+    "hookshot": "^0.0.2",
+    "method-override": "^2.0.2",
+    "morgan": "^1.1.1",
+    "relative-date": "^1.1.1",
+    "rssparser2": "^0.0.4",
+    "simple-twitter": "^1.0.6"
   },
   "devDependencies": {
     "gulp": "^3.8.0",
-    "gulp-autoprefixer": "0.0.7",
+    "gulp-autoprefixer": "^0.0.7",
     "gulp-concat": "^2.2.0",
     "gulp-csso": "^0.2.9",
     "gulp-imagemin": "^0.6.1",
