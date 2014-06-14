@@ -1,69 +1,65 @@
 {{> header}}
-<p class="intro pure-u-1">I love climbing but, unfortunately, this doesn't help me bring home the
+<p class="intro">I love climbing but, unfortunately, this doesn't help me bring home the
   bacon.<br>For this reason, I spend most of my time working as software engineer.</p>
 <div class="wrapper">
-  <section id="main" class="pure-g-r">
-    <div class="pure-u-1-2">
-      <div class="inner-box">
-        <header class="hgroup">
-          <h2>Twitter</h2>
-          <h3>
-            my tweets
-            <span class="btn-twitter">
-              <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @granze</a>
-              <script>
-                !function (d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                  }
-                }(document, "script", "twitter-wjs");
-              </script>
-            </span>
-          </h3>
-        </header>
-        <ul class="feed" id="twitter">
-          {{#twitter}}
-            <li>
-              <span class="date">{{date}}</span> - {{text}} | <a href="https://twitter.com/granze/status/{{id}}">details</a>
-            </li>
-          {{/twitter}}
-        </ul>
-        <header class="hgroup">
-          <h2>Github</h2>
-          <h3>my Github activities <a target="_blank" class="more" href="https://github.com/Granze?tab=activity">more<i class="sprite-new-window"></i></a></h3>
-        </header>
-        <ul class="feed" id="github">
-          {{#github}}
-            <li><span class="date">{{time_ago}}</span> - {{title}}</li>
-          {{/github}}
-        </ul>
-      </div>
+  <section id="main" class="grid grid-pad">
+    <div class="col-1-2">
+      <header class="hgroup">
+        <h2>Twitter</h2>
+        <h3>
+          my tweets
+          <span class="btn-twitter">
+            <a href="https://twitter.com/granze" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @granze</a>
+            <script>
+              !function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = "//platform.twitter.com/widgets.js";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+              }(document, "script", "twitter-wjs");
+            </script>
+          </span>
+        </h3>
+      </header>
+      <ul class="feed" id="twitter">
+        {{#twitter}}
+          <li>
+            <span class="date">{{date}}</span> - {{text}} | <a href="https://twitter.com/granze/status/{{id}}">details</a>
+          </li>
+        {{/twitter}}
+      </ul>
+      <header class="hgroup">
+        <h2>Github</h2>
+        <h3>my Github activities <a target="_blank" class="more" href="https://github.com/Granze?tab=activity">more</a></h3>
+      </header>
+      <ul class="feed" id="github">
+        {{#github}}
+          <li><span class="date">{{time_ago}}</span> - {{title}}</li>
+        {{/github}}
+      </ul>
     </div>
-    <div class="pure-u-1-2">
-      <div class="inner-box">
-        <header class="hgroup">
-          <h2>8a.nu</h2>
-          <h3>my climbing ascents <a target="_blank" class="more" href="http://s.shr.lc/1biC93J">more</a></h3>
-        </header>
-        <ul class="feed" id="ottoa">
-          {{#ottoa}}
-            <li><span class="date">{{date}}</span> - {{route}} <strong class="grade">{{grade}}</strong> <em class="crag">({{crag}})</em></li>
-          {{/ottoa}}
-        </ul>
-        <header class="hgroup">
-          <h2>Last.fm</h2>
-          <h3>what I'm listening to <a target="_blank" class="more" href="http://www.last.fm/user/granzebru/tracks">more</a></h3>
-        </header>
-        <ul class="feed" id="lastfm">
-          {{#lastfm}}
-            <li><a href="{{url}}">{{title}}</a></li>
-          {{/lastfm}}
-        </ul>
-      </div>
+    <div class="col-1-2">
+      <header class="hgroup">
+        <h2>8a.nu</h2>
+        <h3>my climbing ascents <a target="_blank" class="more" href="http://s.shr.lc/1biC93J">more</a></h3>
+      </header>
+      <ul class="feed" id="ottoa">
+        {{#ottoa}}
+          <li><span class="date">{{date}}</span> - {{route}} <strong class="grade">{{grade}}</strong> <em class="crag">({{crag}})</em></li>
+        {{/ottoa}}
+      </ul>
+      <header class="hgroup">
+        <h2>Last.fm</h2>
+        <h3>what I'm listening to <a target="_blank" class="more" href="http://www.last.fm/user/granzebru/tracks">more</a></h3>
+      </header>
+      <ul class="feed" id="lastfm">
+        {{#lastfm}}
+          <li><a href="{{url}}">{{title}}</a></li>
+        {{/lastfm}}
+      </ul>
     </div>
   </section>
  </div>
