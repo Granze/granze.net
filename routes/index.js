@@ -2,14 +2,14 @@ exports.index = function(req, res) {
 
   'use strict';
 
-  var twitter = require('simple-twitter'),
+  var Twit = require('twit'),
       config = require('../config.js'),
       parser = require('rssparser2'),
       async = require('async'),
       relativeDate = require('relative-date'),
       options = {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1468.0 Safari/537.36'}};
 
-  twitter = new twitter(config.consumerKey, config.consumerSecret, config.accessToken, config.accessSecret, 3600);
+  var T = new Twit({consumer_key: config.consumerKey, consumer_secret: config.consumerSecret, access_token: config.accessToken, access_token_secret: config.accessSecret});
 
   async.parallel({
         ottoa: function(callback) {
@@ -53,21 +53,14 @@ exports.index = function(req, res) {
           });
         },
         twitter: function(callback) {
-          twitter.get('statuses/user_timeline', function(err, tweets) {
-            var tweetsData = [],
-                created_at,
-                text,
-                id_str,
-                i;
+          T.get('statuses/user_timeline', {count: 10}, function(err, data) {
+            var tweetsData = [];
 
-            for(i = 0; i < 10; i++) {
-              created_at = tweets[i].created_at;
-              text = tweets[i].text;
-              id_str = tweets[i].id_str;
+            data.forEach(function(tweet) {
+              tweetsData.push({date: relativeDate(new Date(tweet.created_at)), text: tweet.text, id: tweet.id_str});
+            });
 
-              tweetsData.push({date: relativeDate(new Date(created_at)), text: text, id: id_str});
-              if(i === 9) {callback(null, tweetsData);}
-            }
+            callback(null, tweetsData);
           });
         }
       },

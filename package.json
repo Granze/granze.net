@@ -16,7 +16,7 @@
     "morgan": "^1.1.1",
     "relative-date": "^1.1.1",
     "rssparser2": "^0.0.4",
-    "simple-twitter": "^1.0.6"
+    "twit": "^1.1.15"
   },
   "devDependencies": {
     "gulp": "^3.8.0",
