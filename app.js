@@ -13,8 +13,8 @@ var express = require('express'),
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
-app.use(morgan());
-app.use(bodyParser());
+app.use(morgan('combined'));
+app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 hbs.registerPartials(__dirname + '/views/partials');
