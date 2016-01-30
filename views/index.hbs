@@ -51,13 +51,13 @@
       {{/ottoa}}
     </ul>
     <header class="hgroup">
-      <h2>Last.fm</h2>
-      <h3>what I'm listening to <a target="_blank" class="more" href="http://www.last.fm/user/granzebru/tracks">more</a></h3>
+      <h2>Medium</h2>
+      <h3>My blog posts <a target="_blank" class="more" href="https://medium.com/@granze">more</a></h3>
     </header>
-    <ul class="feed" id="lastfm">
-      {{#lastfm}}
-        <li><a href="{{url}}">{{title}}</a></li>
-      {{/lastfm}}
+    <ul class="feed" id="medium">
+      {{#medium}}
+        <li><span class="date">{{time_ago}}</span> - <a href="{{url}}">{{title}}</a></li>
+      {{/medium}}
     </ul>
   </div>
 </section>

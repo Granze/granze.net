@@ -34,12 +34,14 @@ exports.index = function(req, res) {
             }
           });
         },
-        lastfm: function(callback) {
-          parser.parseURL('http://ws.audioscrobbler.com/1.0/user/granzebru/recenttracks.rss', function(err, out) {
+        medium: function(callback) {
+          parser.parseURL('https://medium.com/feed/@granze', function(err, out) {
             if(err) {
               callback(null, err);
+              console.log(err);
             } else {
-              callback(null, out.items);
+              console.log(out);
+              callback(null, out.items.slice(0, 10));
             }
           });
         },
