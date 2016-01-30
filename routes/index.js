@@ -17,19 +17,19 @@ exports.index = function(req, res) {
             if(err) {
               callback(null, err);
             } else {
-              var ascentData = [],
-                  items = out.items.slice(0, 10);
+              var items = out.items.slice(0, 10);
 
-              for(var i = 0; i < items.length; i++) {
-                var ascent = items[i].summary.split('<br>'),
-                    route = ascent[0].split(','),
-                    grade = route[0].slice(-3).trim(),
-                    name = route[0].slice(0, -3).trim(),
-                    crag = route[1],
-                    date = items[i].time_ago;
+              var ascentData = items.map(function(item) {
+                var ascent = item.summary.split('<br>'),
+                    route = ascent[0].split(',');
 
-                ascentData.push({route: name, grade: grade, crag: crag, date: date});
-              }
+                return {
+                  route: route,
+                  grade: route[0].slice(-3).trim(),
+                  crag: route[1],
+                  date: item.time_ago
+                };
+              });
               callback(null, ascentData);
             }
           });
@@ -38,9 +38,7 @@ exports.index = function(req, res) {
           parser.parseURL('https://medium.com/feed/@granze', function(err, out) {
             if(err) {
               callback(null, err);
-              console.log(err);
             } else {
-              console.log(out);
               callback(null, out.items.slice(0, 10));
             }
           });
@@ -56,10 +54,9 @@ exports.index = function(req, res) {
         },
         twitter: function(callback) {
           T.get('statuses/user_timeline', {count: 10}, function(err, data) {
-            var tweetsData = [];
 
-            data.forEach(function(tweet) {
-              tweetsData.push({date: relativeDate(new Date(tweet.created_at)), text: tweet.text, id: tweet.id_str});
+            var tweetsData = data.map(function(tweet) {
+              return {date: relativeDate(new Date(tweet.created_at)), text: tweet.text, id: tweet.id_str};
             });
 
             callback(null, tweetsData);
