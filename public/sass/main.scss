@@ -120,19 +120,6 @@ a {
     position: absolute;
     right: 10px;
     top: 0;
-    padding-right: 28px;
-    &:after {
-      position: absolute;
-      top: 12px;
-      right: 0;
-      display: block;
-      height: 21px;
-      width: 21px;
-      opacity: .2;
-      content: '';
-      text-decoration: none;
-      background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAMAAABFjsb+AAAAJFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADHJj5lAAAAC3RSTlMAECAwQFCgsNDg8PoQbosAAABeSURBVHjaldBLCsAgDEXRZ1v/+99vQxK5nfbiQA+KEIn69pZUp++aVEag6rYSr7Rph4h7tiAMwr60npEG3So9DbLSoIYd0m7irZOf+cMJo18WM6C2p86sqCpmStPoBe2JB5rNuFmxAAAAAElFTkSuQmCC) no-repeat 0 0;
-    }
   }
 }
 .wrapper {
