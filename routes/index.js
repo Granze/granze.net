@@ -11,8 +11,10 @@ exports.index = function(req, res) {
   var ottoaURL = 'http://www.8a.nu/rss/Main.aspx?UserId=19212&AscentType=0&ObjectClass=2&GID=3974d72911c05719152f0953e88cc2df';
   var T = new Twit({consumer_key: config.consumerKey, consumer_secret: config.consumerSecret, access_token: config.accessToken, access_token_secret: config.accessSecret});
   var parseURL = Rx.Observable.fromNodeCallback(parser.parseURL);
+  var getTweets = Rx.Observable.fromNodeCallback(T.get);
 
-  //var ottoa$ = parseURL(ottoaURL, options, function(err, res) {
+  var ottoa$ = parseURL(ottoaURL, options)
+    .pluck('items');
   //  if(err) {
   //    console.log(err);
   //  } else {
@@ -34,29 +36,33 @@ exports.index = function(req, res) {
   //});
 
   var medium$ = parseURL('https://medium.com/feed/@granze')
-    .take(10)
-    .flatMap(function(rss) { return rss.items });
+    .pluck('items');
 
   var github$ = parseURL('https://github.com/Granze.atom')
-    .take(1)
-    .flatMap(function(rss) { return rss.items });
+    .pluck('items');
 
-  //var twitter = function() {
-  //  T.get('statuses/user_timeline', {count: 10}, function(err, res) {
-  //
-  //    var tweetsData = res.map(function(tweet) {
-  //      return {date: relativeDate(new Date(tweet.created_at)), text: tweet.text, id: tweet.id_str};
-  //    });
-  //
-  //    callback(null, tweetsData);
-  //  });
-  //};
 
-  Rx.Observable.zip(
+   var twitter$ = getTweets('statuses/user_timeline', {count: 10})
+     .map(function(tweet) {
+       console.log(tweet);
+       return {
+         date: relativeDate(new Date(tweet.created_at)),
+         text: tweet.text,
+         id: tweet.id_str
+       };
+     });
+
+  Rx.Observable.combineLatest(
+    ottoa$,
     medium$,
-    github$
+    github$,
+    twitter$,
+    function(ottoaItems, mediumItems, githubItems, twitterItems) {
+      return {ottoa: ottoaItems, medium: mediumItems, github: githubItems, twitter: twitterItems}
+    }
   ).subscribe(
     function(results){
+      // console.log(results);
       return res.render('index', results);
     }
   );
