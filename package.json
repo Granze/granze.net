@@ -4,28 +4,29 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "gulp"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.2",
-    "hbs": "^3.1.0",
+    "hbs": "^4.0.0",
     "hookshot": "^0.1.0",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
     "relative-date": "^1.1.2",
     "rssparser2": "^0.0.4",
     "rx": "^4.0.7",
-    "twit": "^2.1.0"
+    "twit": "^2.2.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^1.0.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-nodemon": "^2.0.3",
     "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.0.4"
+    "gulp-sass": "^2.0.4",
+    "nodemon": "^1.8.1"
   }
 }
