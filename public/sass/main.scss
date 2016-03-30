@@ -155,7 +155,7 @@ a {
     border-radius: 4px;
     transition: none;
     &:hover {
-      padding-top: 8px !important;
+      padding-top: 8px;
     }
   }
   &:hover {
@@ -166,21 +166,7 @@ a {
 .inner-box {
   padding: 1em;
 }
-.frame {
-  overflow: hidden;
-  padding: 1em;
-  border: 1px solid darken($darkColor, 6);
-  background-color: $darkColor;
-  img {
-    transition: all .2s ease-out;
-  }
-  &:hover {
-    img {
-      transition: all .2s ease-out;
-      transform: scale(1.1);
-    }
-  }
-}
+
 .intro {
   margin: -20px 0 0 0;
   padding: 20px 0;
@@ -267,7 +253,7 @@ footer {
   text-align: center;
   font-size: .8em;
 }
-.gde {
+.imgs {
   display: block;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
 }
